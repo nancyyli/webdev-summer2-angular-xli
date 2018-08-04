@@ -7,12 +7,15 @@ import { WhiteBoardComponent } from './white-board/white-board.component';
 import {routing} from "./app.routing";
 import { CourseGridComponent } from './course-grid/course-grid.component';
 import {CourseServiceClient} from './services/course.service.client';
+import {UserServiceClient} from './services/user.service.client';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WhiteBoardComponent,
-    CourseGridComponent
+    CourseGridComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +23,8 @@ import {CourseServiceClient} from './services/course.service.client';
     routing
   ],
   providers: [
-    CourseServiceClient
+    CourseServiceClient,
+    UserServiceClient
   ],
   bootstrap: [AppComponent]
 })
