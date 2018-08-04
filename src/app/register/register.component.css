@@ -1,0 +1,17 @@
+h1 {
+    padding: 30px;
+}
+
+input {
+    margin: 30px;
+    width: 50%;
+}
+
+button {
+    margin: 0 30px 20px 30px;
+    display: block;
+}
+
+a {
+    padding: 30px;
+}

@@ -1,0 +1,23 @@
+<div class="container-fluid">
+  <h1>Register</h1>
+
+  <div [hidden]=validPassword class="invalid-password-message">Password input does not match validated password input!</div>
+  <div [hidden]=validUsername class="invalid-username-message">Username already exists. Please choose another username!</div>
+  <input [(ngModel)]="username"
+         placeholder="username"
+         class="form-control"/>
+  <input [(ngModel)]="password"
+         placeholder="password"
+         class="form-control"/>
+  <input [(ngModel)]="password2"
+         placeholder="verify password"
+         class="form-control"/>
+  <button (click)="register(username, password, password2)"
+          class="btn btn-primary">
+    Register
+  </button>
+
+  <a routerLink="/login">Login</a>
+  <a routerLink="/home">Home</a>
+
+</div>
