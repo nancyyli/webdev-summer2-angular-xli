@@ -19,4 +19,19 @@ export class UserServiceClient {
         }
       });
     }
+
+    login(username, password) {
+      const credentials = {
+        username: username,
+        password: password
+      };
+      return fetch('http://localhost:8080/api/login', {
+        method: 'post',
+        body: JSON.stringify(credentials),
+        // credentials: 'include', // change later
+        headers: {
+          'content-type': 'application/json'
+        }
+      }).then(response => response.text());
+    }
   }
