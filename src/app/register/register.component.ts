@@ -32,7 +32,7 @@ export class RegisterComponent implements OnInit {
   register(username, password, password2) {
     if (this.validatePassword(password, password2)) {
         this.service.findUserByUsername(username).then((username) => {
-          if (username.length > 0) {
+          if (username) {
             this.validUsername = false;
           }
           else {
