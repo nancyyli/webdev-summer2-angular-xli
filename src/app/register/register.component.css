@@ -15,3 +15,10 @@ button {
 a {
     padding: 30px;
 }
+
+.invalid-username-message,
+.invalid-password-message
+ {
+    color: red;
+    padding-left: 30px;
+}
