@@ -10,6 +10,7 @@ import { ParamMap, Router, ActivatedRoute } from '@angular/router';
 export class SectionsComponent implements OnInit {
 
   sections = [];
+  
   courseId = this.route.snapshot.params.courseId;
   constructor(private router: Router, private route: ActivatedRoute, private service: SectionServiceClient) { }
 

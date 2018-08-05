@@ -17,6 +17,14 @@ export class SectionServiceClient {
         credentials: 'include'
       });
     }
+
+    unenrollStudentInSection(sectionId, enrollmentId) {
+      const url = 'http://localhost:3000/api/section/' + sectionId + '/enrollment/' + enrollmentId;
+      return fetch(url, {
+        method: 'delete', 
+        credentials: 'include'
+      });
+    }
   
     findSectionsForCourse(courseId) {
       return fetch(this.SECTION_URL.replace('COURSEID', courseId))

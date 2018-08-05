@@ -31,6 +31,7 @@
     <li *ngFor="let enrollment of sections" class="list-group-item">
       {{enrollment.section.name}}
       ({{enrollment.section.seats}})
+      <button (click)="unenroll(enrollment.section._id, enrollment)" class="btn btn-danger">Unenroll</button>
     </li>
   </ul>
 
