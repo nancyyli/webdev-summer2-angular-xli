@@ -5,6 +5,10 @@ export class UserServiceClient {
       .then(response => response.json());
   }
 
+  findAllUsers() {
+    return fetch('http://localhost:3000/api/user').then(response => response.json());
+  }
+
   findUserByUsername(username) {
     return fetch('http://localhost:3000/api/user/' + username).then(response => response.json());
   }
@@ -52,5 +56,16 @@ export class UserServiceClient {
         'content-type': 'application/json'
       }
     });
+  }
+
+  updateUser(user) {
+    return fetch('http://localhost:3000/api/profile', {
+      body: JSON.stringify(user),
+      credentials: 'include',
+      method: 'put',
+      headers: {
+        'content-type': 'application/json'
+      }
+    })
   }
 }
