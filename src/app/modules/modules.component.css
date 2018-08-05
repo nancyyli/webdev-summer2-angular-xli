@@ -1,0 +1,19 @@
+.list-group {
+    padding-top: 30px;
+}
+
+.course-title {
+    color: black;
+}
+
+.active a {
+    color: white;
+}
+
+h3 {
+    padding-bottom: 20px;
+}
+
+.list-group-item {
+    border-radius: 5px;
+}
