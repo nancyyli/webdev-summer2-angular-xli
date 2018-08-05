@@ -16,6 +16,7 @@ import { AdminComponent } from './admin/admin.component';
 import { AdminCourseComponent } from './admin-course/admin-course.component';
 import { AdminSectionComponent } from './admin-section/admin-section.component';
 import { SectionsComponent } from './sections/sections.component';
+import { CourseViewerComponent } from './course-viewer/course-viewer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,8 @@ import { SectionsComponent } from './sections/sections.component';
     AdminComponent,
     AdminCourseComponent,
     AdminSectionComponent,
-    SectionsComponent
+    SectionsComponent,
+    CourseViewerComponent
   ],
   imports: [
     BrowserModule,
