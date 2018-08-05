@@ -20,23 +20,24 @@ export class ProfileComponent implements OnInit {
   password;
   sections = [];
 
-  // update(user) {
-  //   console.log(user);
-  // }
+  update() {
+     this.service.updateUser(this.user);
+  }
 
   logout() {
-    // this.service
-    //   .logout()
-    //   .then(() =>
-    //     this.router.navigate(['login']));
+    this.service
+      .logout()
+      .then(() =>
+        this.router.navigate(['login']));
 
   }
 
   ngOnInit() {
-    // this.service
-    //   .profile()
-    //   .then(user =>
-    //     this.username = user.username);
+    this.service.findAllUsers().then(user => console.log(user));
+    this.service
+      .profile()
+      .then(user => {console.log(user);
+        this.user = user;});
 
     // this.sectionService
     //   .findSectionsForStudent()
