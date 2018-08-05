@@ -8,11 +8,14 @@ import {routing} from "./app.routing";
 import { CourseGridComponent } from './course-grid/course-grid.component';
 import {CourseServiceClient} from './services/course.service.client';
 import {UserServiceClient} from './services/user.service.client';
+import { SectionServiceClient} from './services/section.service.client';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
+import { AdminComponent } from './admin/admin.component';
+import { AdminCourseComponent } from './admin-course/admin-course.component';
+import { AdminSectionComponent } from './admin-section/admin-section.component';
 import { SectionsComponent } from './sections/sections.component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +24,9 @@ import { SectionsComponent } from './sections/sections.component';
     RegisterComponent,
     LoginComponent,
     ProfileComponent,
+    AdminComponent,
+    AdminCourseComponent,
+    AdminSectionComponent
     SectionsComponent
   ],
   imports: [
@@ -30,7 +36,8 @@ import { SectionsComponent } from './sections/sections.component';
   ],
   providers: [
     CourseServiceClient,
-    UserServiceClient
+    UserServiceClient,
+    SectionServiceClient
   ],
   bootstrap: [AppComponent]
 })

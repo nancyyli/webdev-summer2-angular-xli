@@ -1,0 +1,25 @@
+<div class="container-fluid">
+
+
+  <div class="row">
+    <div *ngFor="let section of sections" class="sections-list">
+      <label for="sectionName">Section Name</label>
+      <input [(ngModel)]="section.name" id="sectionName" placeholder="Section Name" class="form-control section-info"/>
+      <label for="sectionSeats">Number of Seats</label>
+      <input [(ngModel)]="section.seats" id="sectionSeats" placeholder="Number of Seats" class="form-control section-info"/>
+      <button (click)="updateSection(section.id, section.name, section.seats)" class="fa fa-pencil btn btn-success"></button>
+    </div>
+ 
+  </div>
+
+  <div class="row">
+      <div class="create-section">Create a New Section:</div>
+      <input [(ngModel)]="newSectionName"
+        placeholder="New Section Name"
+        class="form-control new-section"/>
+      <input [(ngModel)]="newSeatNumber"
+        placeholder="New Seat Number"
+        class="form-control new-section"/>
+      <button (click)="createSection(newSectionName, newSeatNumber)" class="btn btn-success">Create</button>
+  </div>
+</div>

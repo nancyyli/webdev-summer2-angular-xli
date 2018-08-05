@@ -18,6 +18,7 @@ export class ProfileComponent implements OnInit {
   user = {};
   username;
   password;
+  isAdmin = false;
   sections = [];
 
   update() {
@@ -33,11 +34,14 @@ export class ProfileComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.service.findAllUsers().then(user => console.log(user));
     this.service
       .profile()
-      .then(user => {console.log(user);
-        this.user = user;});
+      .then(user => {
+        this.user = user
+        if (user.username == 'admin') {
+          this.isAdmin = true;
+        }
+      });
 
     // this.sectionService
     //   .findSectionsForStudent()
