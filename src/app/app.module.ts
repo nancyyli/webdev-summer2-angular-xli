@@ -19,7 +19,8 @@ import { SectionsComponent } from './sections/sections.component';
 import { CourseViewerComponent } from './course-viewer/course-viewer.component';
 import { ModulesComponent } from './modules/modules.component';
 import { ModuleServiceClient } from './services/module.service.client';
-import { LessonsComponent } from './lessons/lessons.component'
+import { LessonsComponent } from './lessons/lessons.component';
+import { LessonServiceClient } from './services/lesson.service.client';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,6 +45,7 @@ import { LessonsComponent } from './lessons/lessons.component'
   providers: [
     CourseServiceClient,
     ModuleServiceClient,
+    LessonServiceClient,
     UserServiceClient,
     SectionServiceClient
   ],
