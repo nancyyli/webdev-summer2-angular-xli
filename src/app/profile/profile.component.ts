@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-// import {User} from "../models/user.model.client";
+import {User} from "../models/user.model.client";
 import {UserServiceClient} from "../services/user.service.client";
 import {Router} from "@angular/router";
-// import {SectionServiceClient} from "../services/section.service.client";
+import {SectionServiceClient} from "../services/section.service.client";
 
 @Component({
   selector: 'app-profile',
@@ -12,7 +12,7 @@ import {Router} from "@angular/router";
 export class ProfileComponent implements OnInit {
 
   constructor(private service: UserServiceClient,
-              // private sectionService: SectionServiceClient,
+              private sectionService: SectionServiceClient,
               private router: Router) { }
 
   user = {};
@@ -33,6 +33,15 @@ export class ProfileComponent implements OnInit {
 
   }
 
+  unenroll(sectionId, enrollment) {
+    this.sectionService
+      .unenrollStudentInSection(sectionId, enrollment._id)
+      .then(() => {
+        this.sectionService
+        .findSectionsForStudent()
+        .then(sections => this.sections = sections );
+      });
+  }
   ngOnInit() {
     this.service
       .profile()
@@ -42,10 +51,10 @@ export class ProfileComponent implements OnInit {
           this.isAdmin = true;
         }
       });
-
-    // this.sectionService
-    //   .findSectionsForStudent()
-    //   .then(sections => this.sections = sections );
+ 
+    this.sectionService
+      .findSectionsForStudent()
+      .then(sections => {console.log(sections);this.sections = sections });
   }
 
 }
