@@ -3,10 +3,10 @@
 
     <ul class="list-group">
         <li *ngFor="let section of sections" class="list-group-item">
-          <div>Section Name: {{section.name}}</div>
-          <div>Number of Seats: {{section.seats}}</div>
+          <div class="section-name">Section Name: {{section.name}}</div>
+          <div class="section-seats">Number of Seats: {{section.seats}}</div>
           <button (click)="enroll(section)"
-                  class="float-right btn btn-primary">Enroll</button>
+                  class="float-right btn btn-primary enroll-btn">Enroll</button>
         </li>
     </ul>
   </div>
