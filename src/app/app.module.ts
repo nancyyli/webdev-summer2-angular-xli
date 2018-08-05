@@ -22,6 +22,7 @@ import { ModuleServiceClient } from './services/module.service.client';
 import { LessonsComponent } from './lessons/lessons.component';
 import { LessonServiceClient } from './services/lesson.service.client';
 import { WidgetsComponent } from './widgets/widgets.component';
+import { WidgetServiceClient } from './services/widget.service.client';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,6 +48,7 @@ import { WidgetsComponent } from './widgets/widgets.component';
   providers: [
     CourseServiceClient,
     ModuleServiceClient,
+    WidgetServiceClient,
     LessonServiceClient,
     UserServiceClient,
     SectionServiceClient
