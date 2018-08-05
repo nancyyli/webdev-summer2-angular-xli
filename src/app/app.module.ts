@@ -13,6 +13,7 @@ import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AdminComponent } from './admin/admin.component';
 import { AdminCourseComponent } from './admin-course/admin-course.component';
+import { AdminSectionComponent } from './admin-section/admin-section.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { AdminCourseComponent } from './admin-course/admin-course.component';
     LoginComponent,
     ProfileComponent,
     AdminComponent,
-    AdminCourseComponent
+    AdminCourseComponent,
+    AdminSectionComponent
   ],
   imports: [
     BrowserModule,
