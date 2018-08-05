@@ -1,0 +1,11 @@
+.nav-tabs {
+    padding-top: 40px;
+}
+
+a {
+    color: black;
+}
+
+.active {
+    color: blue !important;
+}
