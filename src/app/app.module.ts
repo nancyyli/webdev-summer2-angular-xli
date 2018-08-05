@@ -15,7 +15,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { AdminComponent } from './admin/admin.component';
 import { AdminCourseComponent } from './admin-course/admin-course.component';
 import { AdminSectionComponent } from './admin-section/admin-section.component';
-
+import { SectionsComponent } from './sections/sections.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +27,7 @@ import { AdminSectionComponent } from './admin-section/admin-section.component';
     AdminComponent,
     AdminCourseComponent,
     AdminSectionComponent
+    SectionsComponent
   ],
   imports: [
     BrowserModule,
