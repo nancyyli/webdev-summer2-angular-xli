@@ -1,6 +1,6 @@
 
 <div class="widgets-list">
-<div class="widgets" *ngFor="let widget of widgets">
+<div class="widget" *ngFor="let widget of widgets">
     <div [ngSwitch]="widget.widgetType">
       <div *ngSwitchCase="'Heading'">
         <div [ngSwitch]="widget.size">
