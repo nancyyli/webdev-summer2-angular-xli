@@ -11,19 +11,23 @@ export class SectionsComponent implements OnInit {
 
   sections = [];
   courseId = this.route.snapshot.params.courseId;
-  constructor(private route: ActivatedRoute, private service: SectionServiceClient) { }
+  constructor(private router: Router, private route: ActivatedRoute, private service: SectionServiceClient) { }
 
   ngOnInit() {
     this.loadSections(this.courseId);
   }
 
   enroll(section) {
-    console.log('enrolling');
+    this.service
+      .enrollStudentInSection(section._id)
+      .then(() => {
+        this.router.navigate(['profile']);
+      });
   }
   
   loadSections(courseId) {
     this.courseId = courseId;
     this.service.findSectionsForCourse(courseId)
-      .then(sections => this.sections = sections);
+      .then(sections => {console.log(sections); this.sections = sections});
   }
 }
