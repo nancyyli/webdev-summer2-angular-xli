@@ -5,6 +5,7 @@ import {LoginComponent} from "./login/login.component";
 import { ProfileComponent } from './profile/profile.component';
 import { AdminComponent } from './admin/admin.component';
 import { AdminCourseComponent } from './admin-course/admin-course.component';
+import { AdminSectionComponent } from './admin-section/admin-section.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -14,6 +15,7 @@ const appRoutes: Routes = [
   { path: 'profile', component: ProfileComponent},
   { path: 'admin', component: AdminComponent},
   { path: 'admin/courses', component: AdminCourseComponent},
+  { path: 'course/:courseId/section/admin', component: AdminSectionComponent},
   { path: '**', component: WhiteBoardComponent} // last
 ];
 export const routing = RouterModule.forRoot(appRoutes);

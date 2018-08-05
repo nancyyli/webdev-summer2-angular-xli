@@ -1,3 +1,9 @@
-<p>
-  admin-section works!
-</p>
+<div class="container-fluid">
+
+  <div class="row">
+      <input [(ngModel)]="newSectionName"
+        placeholder="New Section Name"
+        class="form-control"/>
+      <button (click)="createSection(newSectionName, courseId)" class="btn btn-primary">Create New Section</button>
+  </div>
+</div>

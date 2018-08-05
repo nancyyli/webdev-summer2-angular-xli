@@ -2,13 +2,15 @@
 
 <div class="row">
   <div *ngFor="let course of courses" class="col-sm-3">
-    <div class="card">
+      <h5 class="card-title">{{course.title}}</h5>
+      <app-admin-section [courseId]="course.id"></app-admin-section>
+    <!-- <div class="card">
       <div class="card-body">
         <h5 class="card-title">{{course.title}}</h5>
         <p class="card-text"></p>
         <a routerLink="/course/{{course.id}}/section/admin"
            class="btn btn-primary view-btn">View Sections</a>
       </div>
-    </div>
+    </div> -->
   </div>
 </div>
