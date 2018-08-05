@@ -1,3 +1,12 @@
-<p>
-  sections works!
-</p>
+<div class="container-fluid">
+    <h1>Sections available ({{sections.length}}): </h1>
+
+    <ul class="list-group">
+        <li *ngFor="let section of sections" class="list-group-item">
+          <div>Section Name: {{section.name}}</div>
+          <div>Number of Seats: {{section.seats}}</div>
+          <button (click)="enroll(section)"
+                  class="float-right btn btn-primary">Enroll</button>
+        </li>
+    </ul>
+  </div>
