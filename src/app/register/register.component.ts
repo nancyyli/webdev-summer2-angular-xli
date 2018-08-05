@@ -31,14 +31,14 @@ export class RegisterComponent implements OnInit {
 
   register(username, password, password2) {
     if (this.validatePassword(password, password2)) {
-        this.service.findUserByUsername(username).then((username) => {
-          if (username) {
+        this.service.findUserByUsername(username).then((user) => {
+          if (user) {
             this.validUsername = false;
           }
           else {
             this.service
             .createUser(username, password)
-            .then(() =>
+            .then((user) =>
               this.router.navigate(['profile']));
             this.validUsername = true;
           }

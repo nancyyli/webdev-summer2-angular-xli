@@ -33,11 +33,10 @@ export class ProfileComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.service.findAllUsers().then(user => console.log(user));
     this.service
       .profile()
-      .then(user => {console.log(user);
-        this.user = user;});
+      .then(user => 
+        this.user = user);
 
     // this.sectionService
     //   .findSectionsForStudent()
