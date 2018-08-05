@@ -18,7 +18,8 @@ import { AdminSectionComponent } from './admin-section/admin-section.component';
 import { SectionsComponent } from './sections/sections.component';
 import { CourseViewerComponent } from './course-viewer/course-viewer.component';
 import { ModulesComponent } from './modules/modules.component';
-import { ModuleServiceClient } from './services/module.service.client'
+import { ModuleServiceClient } from './services/module.service.client';
+import { LessonsComponent } from './lessons/lessons.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +33,8 @@ import { ModuleServiceClient } from './services/module.service.client'
     AdminSectionComponent,
     SectionsComponent,
     CourseViewerComponent,
-    ModulesComponent
+    ModulesComponent,
+    LessonsComponent
   ],
   imports: [
     BrowserModule,
