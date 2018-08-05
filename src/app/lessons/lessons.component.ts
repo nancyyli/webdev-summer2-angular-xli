@@ -1,4 +1,7 @@
+
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
+import {LessonServiceClient} from "../services/lesson.service.client";
 
 @Component({
   selector: 'app-lessons',
@@ -6,8 +9,31 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./lessons.component.css']
 })
 export class LessonsComponent implements OnInit {
+  constructor(private service: LessonServiceClient,
+    private route: ActivatedRoute) {
+      this.route.params.subscribe(
+      params => this.setParams(params));
+  }
 
-  constructor() { }
+  courseId;
+  moduleId;
+  lessonId;
+  lessons = [];
+
+  setParams(params) {
+  this.courseId = params['courseId'];
+  this.moduleId = params['moduleId'];
+  this.lessonId = params['lessonId'];
+  this.loadLessons(this.moduleId);
+  }
+
+  loadLessons(moduleId) {
+    console.log('loading');
+
+    console.log(moduleId);
+    this.service.findLessonsForModule(this.courseId, this.moduleId)
+    .then(lessons => this.lessons = lessons);
+  }
 
   ngOnInit() {
   }
