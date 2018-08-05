@@ -17,7 +17,7 @@ const appRoutes: Routes = [
   { path: 'admin', component: AdminComponent},
   { path: 'admin/courses', component: AdminCourseComponent},
   { path: 'course/:courseId/section/admin', component: AdminSectionComponent},
-  { path: 'course/:courseId/section', component: SectionsComponent },
+  { path: 'course/:courseId/section', component: SectionsComponent }, 
   { path: '**', component: WhiteBoardComponent} // last
 ];
 export const routing = RouterModule.forRoot(appRoutes);
