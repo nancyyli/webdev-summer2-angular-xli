@@ -10,6 +10,7 @@ import {CourseServiceClient} from './services/course.service.client';
 import {UserServiceClient} from './services/user.service.client';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { LoginComponent } from './login/login.component';
     WhiteBoardComponent,
     CourseGridComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
