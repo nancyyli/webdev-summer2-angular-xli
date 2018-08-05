@@ -26,7 +26,7 @@ import { SectionsComponent } from './sections/sections.component';
     ProfileComponent,
     AdminComponent,
     AdminCourseComponent,
-    AdminSectionComponent
+    AdminSectionComponent,
     SectionsComponent
   ],
   imports: [
