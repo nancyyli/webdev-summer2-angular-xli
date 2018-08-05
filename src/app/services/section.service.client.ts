@@ -2,21 +2,21 @@ export class SectionServiceClient {
 
     SECTION_URL = 'http://localhost:3000/api/course/COURSEID/section';
   
-    // findSectionsForStudent() {
-    //   const url = 'http://localhost:3000/api/student/section';
-    //   return fetch(url, {
-    //     credentials: 'include'
-    //   })
-    //     .then(response => response.json());
-    // }
+    findSectionsForStudent() {
+      const url = 'http://localhost:3000/api/student/section';
+      return fetch(url, {
+        credentials: 'include'
+      })
+        .then(response => response.json());
+    }
   
-    // enrollStudentInSection(sectionId) {
-    //   const url = 'http://localhost:3000/api/section/' + sectionId + '/enrollment';
-    //   return fetch(url, {
-    //     method: 'post',
-    //     credentials: 'include'
-    //   });
-    // }
+    enrollStudentInSection(sectionId) {
+      const url = 'http://localhost:3000/api/section/' + sectionId + '/enrollment';
+      return fetch(url, {
+        method: 'post',
+        credentials: 'include'
+      });
+    }
   
     findSectionsForCourse(courseId) {
       return fetch(this.SECTION_URL.replace('COURSEID', courseId))
