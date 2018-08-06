@@ -38,7 +38,28 @@ export class SectionServiceClient {
       const url ='http://localhost:3000/api/section/' + sectionId;
       return fetch(url).then(response => response.json());
     }
-  
+
+    updateSection(sectionId, sectionName, sectionSeats) {
+      var section = {
+        name: sectionName,
+        seats: sectionSeats
+      }
+      return fetch('http://localhost:3000/api/section/' + sectionId, {
+        body:JSON.stringify(section),
+        method: 'put', 
+        credentials: 'include',
+        headers: {
+          'content-type': 'application/json'
+        }
+      })
+    }
+
+    deleteSection(sectionId) {
+      return fetch('http://localhost:3000/api/section/' + sectionId, {
+        method: 'delete',
+        credentials: 'include'
+      })
+    }
     createSection(courseId, name, seats) {
       const section = {courseId, name, seats};
       return fetch(this.SECTION_URL.replace('COURSEID', courseId), {

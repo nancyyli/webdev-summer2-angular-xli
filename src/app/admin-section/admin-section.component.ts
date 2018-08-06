@@ -10,7 +10,8 @@ import { Input } from '@angular/core';
 })
 export class AdminSectionComponent implements OnInit {
 
-  newSeatNumber;
+  newSeatNumber = 10;
+  section = {};
   sections = [];
   @Input('courseId') courseId: string;
   @Input('courseTitle') courseTitle: string;
@@ -26,8 +27,13 @@ export class AdminSectionComponent implements OnInit {
   }
 
   updateSection(sectionId, sectionName, sectionSeats) {
-    console.log('updating');
+    this.service.updateSection(sectionId, sectionName, sectionSeats);
   }
+
+  deleteSection(sectionId) {
+    this.service.deleteSection(sectionId).then(() => this.loadSections(this.courseId));
+  }
+
   loadSections(courseId) {
     this.courseId = courseId;
     this.service.findSectionsForCourse(courseId)
