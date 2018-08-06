@@ -8,6 +8,7 @@ import { AdminCourseComponent } from './admin-course/admin-course.component';
 import { AdminSectionComponent } from './admin-section/admin-section.component';
 import { SectionsComponent } from './sections/sections.component';
 import { CourseViewerComponent } from './course-viewer/course-viewer.component';
+import { CourseGridComponent } from './course-grid/course-grid.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -16,6 +17,7 @@ const appRoutes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'profile', component: ProfileComponent},
   { path: 'admin', component: AdminComponent},
+  { path: 'courses', component: CourseGridComponent},
   { path: 'admin/courses', component: AdminCourseComponent},
   { path: 'course/:courseId', component: CourseViewerComponent},
   { path: 'course/:courseId/section/admin', component: AdminSectionComponent},
