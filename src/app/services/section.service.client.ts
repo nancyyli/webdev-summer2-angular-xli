@@ -40,19 +40,24 @@ export class SectionServiceClient {
     }
 
     updateSection(sectionId, sectionName, sectionSeats) {
-      
       var section = {
         name: sectionName,
         seats: sectionSeats
       }
-      console.log('updating');
-      console.log(section);
       return fetch('http://localhost:3000/api/section/' + sectionId, {
         body:JSON.stringify(section),
         method: 'put', 
+        credentials: 'include',
         headers: {
           'content-type': 'application/json'
         }
+      })
+    }
+
+    deleteSection(sectionId) {
+      return fetch('http://localhost:3000/api/section/' + sectionId, {
+        method: 'delete',
+        credentials: 'include'
       })
     }
     createSection(courseId, name, seats) {

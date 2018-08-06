@@ -8,6 +8,7 @@
       <label for="sectionSeats">Number of Seats</label>
       <input [(ngModel)]="section.seats" id="sectionSeats" placeholder="Number of Seats" class="form-control section-info"/>
       <button (click)="updateSection(section._id, section.name, section.seats)" class="fa fa-pencil btn btn-success"></button>
+      <button (click)="deleteSection(section._id)" class="fa fa-trash btn btn-danger"></button>
     </div>
  
   </div>
