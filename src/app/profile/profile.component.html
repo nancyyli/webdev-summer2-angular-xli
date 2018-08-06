@@ -26,10 +26,17 @@
   </button>
 
   <div *ngIf="user.username != 'admin'">
+    <h2>Courses ({{courses.length}})</h2>
+    <ul class="list-group">
+        <li *ngFor="let courses of courses" class="list-group-item">
+          {{courses.title}}
+        </li>
+      </ul>
+
     <h2>Sections ({{sections.length}})</h2>
 
     <ul class="list-group">
-      <li *ngFor="let enrollment of sections" class="list-group-item">
+      <li *ngFor="let enrollment of sections" class="list-group-item section-item">
         {{enrollment.section.name}}
         ({{enrollment.section.seats}})
         <button (click)="unenroll(enrollment.section._id, enrollment)" class="btn btn-danger">Unenroll</button>
@@ -39,6 +46,7 @@
 
   <a (click)="logout()">Logout</a>
   <a routerLink="/home">Home</a>
+  <a routerLink="/courses">Courses</a>
   <a [hidden]=!isAdmin routerLink="/admin">Admin Page</a>
 
 </div>

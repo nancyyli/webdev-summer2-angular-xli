@@ -9,6 +9,8 @@ export class SectionServiceClient {
       })
         .then(response => response.json());
     }
+
+
   
     enrollStudentInSection(sectionId) {
       const url = 'http://localhost:3000/api/section/' + sectionId + '/enrollment';
@@ -29,6 +31,12 @@ export class SectionServiceClient {
     findSectionsForCourse(courseId) {
       return fetch(this.SECTION_URL.replace('COURSEID', courseId))
         .then(response => response.json());
+    }
+
+    findSectionById(sectionId) {
+      console.log(sectionId);
+      const url ='http://localhost:3000/api/section/' + sectionId;
+      return fetch(url).then(response => response.json());
     }
   
     createSection(courseId, name, seats) {
