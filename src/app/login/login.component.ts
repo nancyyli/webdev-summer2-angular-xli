@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
     this.service
       .login(username, password)
       .then((loggedIn) => {
-        if (loggedIn.length) {
+        if (loggedIn) {
             this.successLogin = true;
             this.router.navigate(['profile']);
         }
