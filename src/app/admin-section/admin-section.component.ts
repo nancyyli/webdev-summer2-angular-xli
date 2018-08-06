@@ -10,10 +10,11 @@ import { Input } from '@angular/core';
 })
 export class AdminSectionComponent implements OnInit {
 
-  newSectionName;
   newSeatNumber;
   sections = [];
   @Input('courseId') courseId: string;
+  @Input('courseTitle') courseTitle: string;
+  newSectionName;
   constructor(private service: SectionServiceClient) { }
 
   ngOnInit() {
@@ -30,6 +31,9 @@ export class AdminSectionComponent implements OnInit {
   loadSections(courseId) {
     this.courseId = courseId;
     this.service.findSectionsForCourse(courseId)
-      .then(sections => this.sections = sections);
+      .then(sections => {
+        this.sections = sections
+        this.newSectionName = this.courseTitle + ' Section ' + (this.sections.length + 1);
+      });
   }
 }
