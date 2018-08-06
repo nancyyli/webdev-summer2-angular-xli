@@ -29,6 +29,6 @@ export class SectionsComponent implements OnInit {
   loadSections(courseId) {
     this.courseId = courseId;
     this.service.findSectionsForCourse(courseId)
-      .then(sections => {console.log(sections); this.sections = sections});
+      .then(sections => {this.sections = sections});
   }
 }

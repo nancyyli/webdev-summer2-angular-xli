@@ -28,6 +28,9 @@ export class ProfileComponent implements OnInit {
      this.service.updateUser(this.user);
   }
 
+  deleteAccount() {
+    this.service.deleteAccount().then(() => this.logout());
+  }
   logout() {
     this.service
       .logout()
@@ -38,7 +41,6 @@ export class ProfileComponent implements OnInit {
 
   enrolledCourses(sectionId) {
     this.sectionService.findSectionById(sectionId).then((section) => {
-        console.log(section);
         this.courseService.findCourseById(section.courseId)
         .then(course => {
           this.courses.push(course);
