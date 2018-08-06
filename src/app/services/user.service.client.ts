@@ -26,7 +26,7 @@ export class UserServiceClient {
       headers: {
         'content-type': 'application/json'
       }
-    }).then(response => response.text());
+    }).then(response => response.json());
   }
 
   logout() {
