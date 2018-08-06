@@ -39,7 +39,7 @@ export class ProfileComponent implements OnInit {
   enrolledCourses(sectionId) {
     console.log('in enrolling')
     this.sectionService.findSectionById(sectionId).then((section) => {
-      console.log(section);
+        console.log(section);
         this.courseService.findCourseById(section.courseId)
         .then(course => {
           this.courses.push(course);

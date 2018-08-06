@@ -7,7 +7,7 @@
       <input [(ngModel)]="section.name" id="sectionName" placeholder="Section Name" class="form-control section-info"/>
       <label for="sectionSeats">Number of Seats</label>
       <input [(ngModel)]="section.seats" id="sectionSeats" placeholder="Number of Seats" class="form-control section-info"/>
-      <button (click)="updateSection(section.id, section.name, section.seats)" class="fa fa-pencil btn btn-success"></button>
+      <button (click)="updateSection(section._id, section.name, section.seats)" class="fa fa-pencil btn btn-success"></button>
     </div>
  
   </div>

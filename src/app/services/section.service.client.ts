@@ -38,7 +38,23 @@ export class SectionServiceClient {
       const url ='http://localhost:3000/api/section/' + sectionId;
       return fetch(url).then(response => response.json());
     }
-  
+
+    updateSection(sectionId, sectionName, sectionSeats) {
+      
+      var section = {
+        name: sectionName,
+        seats: sectionSeats
+      }
+      console.log('updating');
+      console.log(section);
+      return fetch('http://localhost:3000/api/section/' + sectionId, {
+        body:JSON.stringify(section),
+        method: 'put', 
+        headers: {
+          'content-type': 'application/json'
+        }
+      })
+    }
     createSection(courseId, name, seats) {
       const section = {courseId, name, seats};
       return fetch(this.SECTION_URL.replace('COURSEID', courseId), {
