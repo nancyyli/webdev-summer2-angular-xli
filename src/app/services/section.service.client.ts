@@ -34,7 +34,6 @@ export class SectionServiceClient {
     }
 
     findSectionById(sectionId) {
-      console.log(sectionId);
       const url ='http://localhost:3000/api/section/' + sectionId;
       return fetch(url).then(response => response.json());
     }

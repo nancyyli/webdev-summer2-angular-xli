@@ -22,7 +22,7 @@ export class WidgetsComponent implements OnInit {
     loadWidgets(lessonId) {
       if (lessonId) {
         this.service.findWidgetsForLesson(lessonId)
-        .then(widgets => {console.log(widgets);this.widgets = widgets});
+        .then(widgets => {this.widgets = widgets});
       }
     }
 

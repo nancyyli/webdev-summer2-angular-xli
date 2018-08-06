@@ -44,6 +44,13 @@ export class UserServiceClient {
       .then(response => response.json());
   }
 
+  deleteAccount() {
+    return fetch('http://localhost:3000/api/profile', {
+      credentials: 'include',
+      method: 'delete'
+    });
+  }
+
   createUser(username, password) {
     const user = {
       username: username,

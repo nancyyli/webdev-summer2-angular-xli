@@ -28,9 +28,6 @@ export class LessonsComponent implements OnInit {
   }
 
   loadLessons(moduleId) {
-    console.log('loading');
-
-    console.log(moduleId);
     this.service.findLessonsForModule(this.courseId, this.moduleId)
     .then(lessons => this.lessons = lessons);
   }
