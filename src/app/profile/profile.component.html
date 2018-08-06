@@ -25,15 +25,17 @@
     Update
   </button>
 
-  <h2>Sections ({{sections.length}})</h2>
+  <div *ngIf="user.username != 'admin'">
+    <h2>Sections ({{sections.length}})</h2>
 
-  <ul class="list-group">
-    <li *ngFor="let enrollment of sections" class="list-group-item">
-      {{enrollment.section.name}}
-      ({{enrollment.section.seats}})
-      <button (click)="unenroll(enrollment.section._id, enrollment)" class="btn btn-danger">Unenroll</button>
-    </li>
-  </ul>
+    <ul class="list-group">
+      <li *ngFor="let enrollment of sections" class="list-group-item">
+        {{enrollment.section.name}}
+        ({{enrollment.section.seats}})
+        <button (click)="unenroll(enrollment.section._id, enrollment)" class="btn btn-danger">Unenroll</button>
+      </li>
+    </ul>
+  </div>
 
   <a (click)="logout()">Logout</a>
   <a routerLink="/home">Home</a>
