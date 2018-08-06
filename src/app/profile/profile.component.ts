@@ -3,6 +3,7 @@ import {User} from "../models/user.model.client";
 import {UserServiceClient} from "../services/user.service.client";
 import {Router} from "@angular/router";
 import {SectionServiceClient} from "../services/section.service.client";
+import {CourseServiceClient} from "../services/course.service.client";
 
 @Component({
   selector: 'app-profile',
@@ -13,6 +14,7 @@ export class ProfileComponent implements OnInit {
 
   constructor(private service: UserServiceClient,
               private sectionService: SectionServiceClient,
+              private courseService: CourseServiceClient,
               private router: Router) { }
 
   user = {};
@@ -20,6 +22,7 @@ export class ProfileComponent implements OnInit {
   password;
   isAdmin = false;
   sections = [];
+  courses = [];
 
   update() {
      this.service.updateUser(this.user);
@@ -31,6 +34,20 @@ export class ProfileComponent implements OnInit {
       .then(() =>
         this.router.navigate(['login']));
 
+  }
+
+  enrolledCourses(sectionId) {
+    console.log('in enrolling')
+    this.sectionService.findSectionById(sectionId).then((section) => {
+      console.log(section);
+        this.courseService.findCourseById(section.courseId)
+        .then(course => {
+          this.courses.push(course);
+          console.log('enrolling rn');
+          console.log(course);
+          console.log(this.courses);
+        });
+    });
   }
 
   unenroll(sectionId, enrollment) {
@@ -54,7 +71,13 @@ export class ProfileComponent implements OnInit {
  
     this.sectionService
       .findSectionsForStudent()
-      .then(sections => {console.log(sections);this.sections = sections });
+      .then(sections => {
+        this.sections = sections;
+        console.log(this.sections);
+        this.sections.forEach(((section) => {
+          this.enrolledCourses(section.section._id);
+        }))
+      });
   }
 
 }
