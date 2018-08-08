@@ -14,7 +14,7 @@ export class UserServiceClient {
   }
 
   currentUser() {
-    return fetch('http://localhost:3000/api/user/exists', {
+    return fetch('https://webdev-server-node-xli.herokuapp.com/api/user/exists', {
       credentials: 'include'
     }).then(response => response.json());
   }
@@ -24,7 +24,7 @@ export class UserServiceClient {
       username: username,
       password: password
     };
-    return fetch('http://localhost:3000/api/login', {
+    return fetch('https://webdev-server-node-xli.herokuapp.com/api/login', {
       method: 'post',
       body: JSON.stringify(credentials),
       credentials: 'include',
@@ -42,7 +42,7 @@ export class UserServiceClient {
   }
 
   profile() {
-    return fetch('http://localhost:3000/api/profile',
+    return fetch('https://webdev-server-node-xli.herokuapp.com/api/profile',
       {
         credentials: 'include', // include, same-origin, *omit
       })
