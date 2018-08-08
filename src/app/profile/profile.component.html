@@ -1,23 +1,23 @@
 
 <div class="container-fluid">
-  <!-- <h1>Profile</h1>
+  <h1>Profile</h1>
 
-  <input [(ngModel)]="user.username || ''"
+  <input [(ngModel)]="user.username"
          placeholder="username"
          class="form-control"/>
-  <input [(ngModel)]="user.firstName || ''"
+  <input [(ngModel)]="user.firstName"
          placeholder="first name"
          class="form-control"/>
-  <input [(ngModel)]="user.lastName || ''"
+  <input [(ngModel)]="user.lastName"
          placeholder="last name"
          class="form-control"/>
-  <input [(ngModel)]="user.email || ''"
+  <input [(ngModel)]="user.email"
          placeholder="email"
          class="form-control"/>
-  <input [(ngModel)]="user.phoneNumber || ''"
+  <input [(ngModel)]="user.phoneNumber"
          placeholder="phone number"
          class="form-control"/>
-  <input [(ngModel)]="user.address || ''"
+  <input [(ngModel)]="user.address"
          placeholder="address"
          class="form-control"/>
   <button (click)="update()"
@@ -53,6 +53,6 @@
   <a (click)="logout()">Logout</a>
   <a routerLink="/home">Home</a>
   <a routerLink="/courses">Courses</a>
-  <a [hidden]=!isAdmin routerLink="/admin">Admin Page</a> -->
+  <a [hidden]=!isAdmin routerLink="/admin">Admin Page</a>
 
 </div>
