@@ -13,7 +13,12 @@ export class UserServiceClient {
     return fetch('http://localhost:3000/api/user/' + username).then(response => response.json());
   }
 
-
+  currentUser() {
+    return fetch('http://localhost:3000/api/user/exists', {
+      credentials: 'include'
+    }).then(response => response.json());
+  }
+  
   login(username, password) {
     const credentials = {
       username: username,
