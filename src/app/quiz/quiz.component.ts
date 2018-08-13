@@ -15,10 +15,16 @@ export class QuizComponent implements OnInit {
   }
 
   quiz: Quiz = new Quiz();
+  quizId = '';
+  submission = {};
+  answers = {};
+  fillBlanks = [];
   submit() {
-    console.log('submitting');
+    this.service
+      .submitQuiz(this.answers, this.quizId);
   }
   loadQuiz(quizId) {
+    this.quizId = quizId;
     this.service.findQuizById(quizId).then(quiz =>   {
       this.quiz = quiz;
     });
