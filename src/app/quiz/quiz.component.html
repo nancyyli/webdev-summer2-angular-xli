@@ -1,0 +1,39 @@
+<div class="container-fluid">
+  <h2>{{quiz.name}}</h2>
+
+  <ul class="list-group">
+    <li *ngFor="let question of quiz.questions" class="list-group-item">
+        <div>{{question.name}}</div>
+        <div>{{question.description}}</div>
+        <div class="float-right">Points: {{question.points}}</div>
+        <div [ngSwitch]="question.questionType">
+            <div *ngSwitchCase="'Essay'">
+              <div class="form-group">
+                  <label for="essay-textarea">Enter your Essay response here:</label>
+                  <textarea class="form-control" rows="5" id="essay-textarea"></textarea>
+              </div>
+            </div>
+            <div *ngSwitchCase="'FillBlanks'">
+              <div *ngFor="let blank of question.blanks">
+                <div>
+                  {{blank.split('*')[0]}}
+                  <input type="text" class="form-control col-sm-2">
+                </div>
+              </div>
+            </div>
+            <div *ngSwitchCase="'Choices'">
+                <div *ngFor="let choice of question.choices">
+                    <div class="radio">
+                        <label><input type="radio" name="choices-radio" value="{{choice.value}}">{{choice.value}} {{choice.text}}</label>
+                      </div>
+                </div>
+            </div>
+            <div *ngSwitchCase="'TrueFalse'">
+                <label class="radio-inline"><input type="radio" value="true" name="true-false-radio">True</label>
+                <label class="radio-inline"><input type="radio" value="false" name="true-false-radio">False</label>
+            </div>
+        </div>
+    </li>
+  </ul>
+
+</div>
