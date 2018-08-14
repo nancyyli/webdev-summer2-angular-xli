@@ -1,0 +1,11 @@
+<div class="container-fluid">
+    <h2>Submissions</h2>
+  
+    <ul class="list-group">
+      <li *ngFor="let submission of submissions; let i=index" class="list-group-item">
+        <div>Submission {{i + 1}}</div>
+        <div>Student Name: {{submission.student}}</div>
+        <div>Submission Time: {{submission.date}}</div>
+      </li>
+    </ul>
+  </div>

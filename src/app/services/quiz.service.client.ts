@@ -9,6 +9,10 @@ export class QuizServiceClient {
         return fetch(this.QUIZ_URL)
           .then(response => response.json());
     }
+    
+    loadSubmissions(quizId) {
+        return fetch(this.QUIZ_URL + quizId + '/submissions').then(response => response.json());
+    }
 
     submitQuiz(submission, quizId) {
         return fetch(this.QUIZ_URL + quizId, {

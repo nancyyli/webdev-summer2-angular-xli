@@ -26,6 +26,7 @@ import { WidgetServiceClient } from './services/widget.service.client';
 import { QuizListComponent } from './quiz-list/quiz-list.component';
 import { QuizServiceClient } from './services/quiz.service.client';
 import { QuizComponent } from './quiz/quiz.component';
+import { QuizSubmissionComponent } from './quiz-submission/quiz-submission.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +44,8 @@ import { QuizComponent } from './quiz/quiz.component';
     LessonsComponent,
     WidgetsComponent,
     QuizListComponent,
-    QuizComponent
+    QuizComponent,
+    QuizSubmissionComponent
   ],
   imports: [
     BrowserModule,
