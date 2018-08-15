@@ -29,8 +29,13 @@ export class QuizSubmissionComponent implements OnInit {
 
     filterSubmission(submissionIndex) {
       var submission = this.submissions[submissionIndex];
-      this.filteredSubmissions = [];
-      this.filteredSubmissions.push(submission);
+      if (submissionIndex =="-1") {
+        this.filteredSubmissions = this.submissions;
+      }
+      else {
+        this.filteredSubmissions = [];
+        this.filteredSubmissions.push(submission);
+      }
     }
 
     loadSubmissions(quizId) {

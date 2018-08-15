@@ -2,7 +2,7 @@
     <h2>Submissions</h2>
     <!-- Search form -->
     <select (change)="filterUsername($event)" class="form-control col-sm-3">
-        <option>Default select</option>
+        <option value="-1">Default select</option>
         <option value="{{i}}" *ngFor="let submission of submissions; let i=index">{{submission.student}}</option>
       </select>
     <ul class="list-group">

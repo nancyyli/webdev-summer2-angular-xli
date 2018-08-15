@@ -14,12 +14,10 @@
               </div>
             </div>
             <div *ngSwitchCase="'FillBlanks'">
-              <div *ngFor="let blank of question.blanks;">
                 <div>
-                  {{blank.split('*')[0]}}
+                  {{question.blanks.split('*')[0]}}
                   <input [(ngModel)]="answers[i].answer" type="text" class="form-control col-sm-2">
                 </div>
-              </div>
             </div>
             <div *ngSwitchCase="'Choices'">
                 <div *ngFor="let choice of question.choices">
