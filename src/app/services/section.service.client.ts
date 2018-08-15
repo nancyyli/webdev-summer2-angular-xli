@@ -1,10 +1,10 @@
 export class SectionServiceClient {
 
-    // SECTION_URL = 'https://webdev-server-node-xli.herokuapp.com/api/course/COURSEID/section';
-    SECTION_URL = 'http://localhost:3000/api/course/COURSEID/section';
+    SECTION_URL = 'https://webdev-server-node-xli.herokuapp.com/api/course/COURSEID/section';
+    // SECTION_URL = 'http://localhost:3000/api/course/COURSEID/section';
   
     findSectionsForStudent() {
-      const url = 'http://localhost:3000/api/student/section';
+      const url = 'http://webdev-server-node-xli.herokuapp.com/api/student/section';
       return fetch(url, {
         credentials: 'include'
       })
@@ -14,7 +14,7 @@ export class SectionServiceClient {
 
   
     enrollStudentInSection(sectionId) {
-      const url = 'http://localhost:3000/api/section/' + sectionId + '/enrollment';
+      const url = 'http://webdev-server-node-xli.herokuapp.com/api/section/' + sectionId + '/enrollment';
       return fetch(url, {
         method: 'post',
         credentials: 'include'
@@ -22,7 +22,7 @@ export class SectionServiceClient {
     }
 
     unenrollStudentInSection(sectionId, enrollmentId) {
-      const url = 'http://localhost:3000/api/section/' + sectionId + '/enrollment/' + enrollmentId;
+      const url = 'http://webdev-server-node-xli.herokuapp.com/api/section/' + sectionId + '/enrollment/' + enrollmentId;
       return fetch(url, {
         method: 'delete', 
         credentials: 'include'
@@ -35,7 +35,7 @@ export class SectionServiceClient {
     }
 
     findSectionById(sectionId) {
-      const url ='http://localhost:3000/api/section/' + sectionId;
+      const url ='http://webdev-server-node-xli.herokuapp.com/api/section/' + sectionId;
       return fetch(url).then(response => response.json());
     }
 
@@ -44,7 +44,7 @@ export class SectionServiceClient {
         name: sectionName,
         seats: sectionSeats
       }
-      return fetch('http://localhost:3000/api/section/' + sectionId, {
+      return fetch('http://webdev-server-node-xli.herokuapp.com/api/section/' + sectionId, {
         body:JSON.stringify(section),
         method: 'put', 
         credentials: 'include',
@@ -55,7 +55,7 @@ export class SectionServiceClient {
     }
 
     deleteSection(sectionId) {
-      return fetch('http://localhost:3000/api/section/' + sectionId, {
+      return fetch('http://webdev-server-node-xli.herokuapp.com/api/section/' + sectionId, {
         method: 'delete',
         credentials: 'include'
       })
