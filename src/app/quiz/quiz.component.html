@@ -2,7 +2,7 @@
   <h2>{{quiz.name}}</h2>
 
   <ul class="list-group">
-    <li *ngFor="let question of quiz.questions" class="list-group-item">
+    <li *ngFor="let question of quiz.questions; let i=index" class="list-group-item">
         <div>{{question.name}}</div>
         <div>{{question.description}}</div>
         <div class="float-right">Points: {{question.points}}</div>
@@ -10,27 +10,27 @@
             <div *ngSwitchCase="'Essay'">
               <div class="form-group">
                   <label for="essay-textarea">Enter your Essay response here:</label>
-                  <textarea [(ngModel)]="answers[question._id]" class="form-control" rows="5" id="essay-textarea"></textarea>
+                  <textarea [(ngModel)]="answers[i].answer" class="form-control" rows="5" id="essay-textarea"></textarea>
               </div>
             </div>
             <div *ngSwitchCase="'FillBlanks'">
-              <div *ngFor="let blank of question.blanks; let i=index">
+              <div *ngFor="let blank of question.blanks;">
                 <div>
                   {{blank.split('*')[0]}}
-                  <input [(ngModel)]="answers[question._id]" type="text" class="form-control col-sm-2">
+                  <input [(ngModel)]="answers[i].answer" type="text" class="form-control col-sm-2">
                 </div>
               </div>
             </div>
             <div *ngSwitchCase="'Choices'">
                 <div *ngFor="let choice of question.choices">
                     <div class="radio">
-                        <label><input [(ngModel)]="answers[question._id]" type="radio" name="choices-radio" value="{{choice.value}}">{{choice.value}} {{choice.text}}</label>
+                        <label><input [(ngModel)]="answers[i].answer" type="radio" name="choices-radio" value="{{choice.value}}">{{choice.value}} {{choice.text}}</label>
                       </div>
                 </div>
             </div>
             <div *ngSwitchCase="'TrueFalse'">
-                <label class="radio-inline"><input [(ngModel)]="answers[question._id]" type="radio" value="true" name="true-false-radio">True</label>
-                <label class="radio-inline"><input [(ngModel)]="answers[question._id]" type="radio" value="false" name="true-false-radio">False</label>
+                <label class="radio-inline"><input [(ngModel)]="answers[i].answer" type="radio" value="true" name="true-false-radio">True</label>
+                <label class="radio-inline"><input [(ngModel)]="answers[i].answer" type="radio" value="false" name="true-false-radio">False</label>
             </div>
         </div>
     </li>

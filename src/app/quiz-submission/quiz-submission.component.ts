@@ -18,13 +18,28 @@ export class QuizSubmissionComponent implements OnInit {
 
     quizId = '';
     submissions = [];
+    filteredSubmissions = [];
     usernames = [];
 
+    filterUsername(event) {
+      const submissionIndex = event.target.value;
+      this.filterSubmission(submissionIndex);
+
+    }
+
+    filterSubmission(submissionIndex) {
+      var submission = this.submissions[submissionIndex];
+      this.filteredSubmissions = [];
+      this.filteredSubmissions.push(submission);
+    }
+
     loadSubmissions(quizId) {
-      console.log('loading');
       this.quizId = quizId;
       this.service.loadSubmissions(this.quizId)
-      .then(submissions => this.submissions = submissions);
+      .then(submissions => {
+        this.filteredSubmissions = submissions
+        this.submissions = submissions
+      });
     }
 
     ngOnInit() {

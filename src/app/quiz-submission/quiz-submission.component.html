@@ -1,11 +1,21 @@
 <div class="container-fluid">
     <h2>Submissions</h2>
-  
+    <!-- Search form -->
+    <select (change)="filterUsername($event)" class="form-control col-sm-3">
+        <option>Default select</option>
+        <option value="{{i}}" *ngFor="let submission of submissions; let i=index">{{submission.student}}</option>
+      </select>
     <ul class="list-group">
-      <li *ngFor="let submission of submissions; let i=index" class="list-group-item">
+      <li *ngFor="let submission of filteredSubmissions; let i=index" class="list-group-item">
         <div>Submission {{i + 1}}</div>
         <div>Student Name: {{submission.student}}</div>
         <div>Submission Time: {{submission.date}}</div>
+
+        <a routerLink="/quiz/{{quizId}}/submissions/{{submission._id}}" class="btn btn-info float-right">View Answers</a>
       </li>
     </ul>
+
+    <a routerLink="/home">Home</a>
+    <a routerLink="/courses">Courses</a>
+    <a routerLink="/quizzes">Quizzes</a>
   </div>
