@@ -9,6 +9,10 @@ import { AdminSectionComponent } from './admin-section/admin-section.component';
 import { SectionsComponent } from './sections/sections.component';
 import { CourseViewerComponent } from './course-viewer/course-viewer.component';
 import { CourseGridComponent } from './course-grid/course-grid.component';
+import { QuizListComponent } from './quiz-list/quiz-list.component';
+import { QuizComponent } from './quiz/quiz.component';
+import { QuizSubmissionComponent } from './quiz-submission/quiz-submission.component';
+import { QuizAnswersComponent } from './quiz-answers/quiz-answers.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -24,6 +28,10 @@ const appRoutes: Routes = [
   { path: 'course/:courseId/section', component: SectionsComponent }, 
   { path: 'course/:courseId/module/:moduleId', component: CourseViewerComponent },
   { path: 'course/:courseId/module/:moduleId/lesson/:lessonId', component: CourseViewerComponent },
+  { path: 'quizzes', component: QuizListComponent}, 
+  { path: 'quiz/:quizId', component: QuizComponent},
+  { path: 'quiz/:quizId/submissions', component: QuizSubmissionComponent},
+  { path: 'quiz/:quizId/submissions/:submissionId', component: QuizAnswersComponent},
   { path: '**', component: WhiteBoardComponent} // last
 ];
 export const routing = RouterModule.forRoot(appRoutes);

@@ -1,0 +1,44 @@
+<div class="container-fluid">
+  <h2>{{quiz.name}}</h2>
+
+  <ul class="list-group">
+    <li *ngFor="let question of quiz.questions; let i=index" class="list-group-item">
+        <div class="question">{{question.name}}</div>
+        <div class="question">{{question.description}}</div>
+        <div class="points float-right">Points: {{question.points}}</div>
+        <div [ngSwitch]="question.questionType">
+            <div *ngSwitchCase="'Essay'">
+              <div class="form-group">
+                  <label for="essay-textarea">Enter your Essay response here:</label>
+                  <textarea [(ngModel)]="answers[i].answer" class="form-control" rows="5" id="essay-textarea"></textarea>
+              </div>
+            </div>
+            <div *ngSwitchCase="'FillBlanks'">
+                <div>
+                  {{question.blanks.split('*')[0]}}
+                  <input [(ngModel)]="answers[i].answer" type="text" class="form-control col-sm-2">
+                </div>
+            </div>
+            <div *ngSwitchCase="'Choices'">
+                <div *ngFor="let choice of question.choices">
+                    <div class="radio">
+                        <label><input [(ngModel)]="answers[i].answer" type="radio" name="choices-radio" value="{{choice.value}}">{{choice.value}} {{choice.text}}</label>
+                      </div>
+                </div>
+            </div>
+            <div *ngSwitchCase="'TrueFalse'">
+                <label class="radio-inline"><input [(ngModel)]="answers[i].answer" type="radio" value="true" name="true-false-radio">True</label>
+                <label class="radio-inline"><input [(ngModel)]="answers[i].answer" type="radio" value="false" name="true-false-radio">False</label>
+            </div>
+        </div>
+    </li>
+  </ul>
+
+  <button class="submit-btn btn btn-success" (click)="submit()">Submit</button>
+  <button routerLink="/quizzes" class="cancel-btn btn btn-danger">Cancel</button>
+
+
+  <a class="home-link" routerLink="/home">Home</a>
+  <a class="courses-link" routerLink="/courses">Courses</a>
+  <a routerLink="/quizzes">Quizzes</a>
+</div>

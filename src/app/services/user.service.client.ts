@@ -1,20 +1,20 @@
 export class UserServiceClient {
 
   findUserById(userId) {
-    return fetch('https://webdev-server-node-xli.herokuapp.com/api/user/' + userId)
+    return fetch('http://webdev-server-node-xli.herokuapp.com/api/user/' + userId)
       .then(response => response.json());
   }
 
   findAllUsers() {
-    return fetch('https://webdev-server-node-xli.herokuapp.com/api/user').then(response => response.json());
+    return fetch('http://webdev-server-node-xli.herokuapp.com/api/user').then(response => response.json());
   }
 
   findUserByUsername(username) {
-    return fetch('https://webdev-server-node-xli.herokuapp.com/api/user/' + username).then(response => response.json());
+    return fetch('http://webdev-server-node-xli.herokuapp.com/api/user/' + username).then(response => response.json());
   }
 
   currentUser() {
-    return fetch('https://webdev-server-node-xli.herokuapp.com/api/user/exists', {
+    return fetch('http://webdev-server-node-xli.herokuapp.com/api/user/exists', {
       credentials: 'include'
     }).then(response => response.json());
   }
@@ -24,7 +24,7 @@ export class UserServiceClient {
       username: username,
       password: password
     };
-    return fetch('https://webdev-server-node-xli.herokuapp.com/api/login', {
+    return fetch('http://webdev-server-node-xli.herokuapp.com/api/login', {
       method: 'post',
       body: JSON.stringify(credentials),
       credentials: 'include',
@@ -35,14 +35,14 @@ export class UserServiceClient {
   }
 
   logout() {
-    return fetch('https://webdev-server-node-xli.herokuapp.com/api/logout', {
+    return fetch('http://webdev-server-node-xli.herokuapp.com/api/logout', {
       method: 'post',
       credentials: 'include'
     });
   }
 
   profile() {
-    return fetch('https://webdev-server-node-xli.herokuapp.com/api/profile',
+    return fetch('http://webdev-server-node-xli.herokuapp.com/api/profile',
       {
         credentials: 'include', // include, same-origin, *omit
       })
@@ -50,7 +50,7 @@ export class UserServiceClient {
   }
 
   deleteAccount() {
-    return fetch('https://webdev-server-node-xli.herokuapp.com/api/profile', {
+    return fetch('http://webdev-server-node-xli.herokuapp.com/api/profile', {
       credentials: 'include',
       method: 'delete'
     });
@@ -61,7 +61,7 @@ export class UserServiceClient {
       username: username,
       password: password
     };
-    return fetch('https://webdev-server-node-xli.herokuapp.com/api/user', {
+    return fetch('http://webdev-server-node-xli.herokuapp.com/api/user', {
       body: JSON.stringify(user),
       credentials: 'include', // include, same-origin, *omit
       method: 'post',
@@ -72,7 +72,7 @@ export class UserServiceClient {
   }
 
   updateUser(user) {
-    return fetch('https://webdev-server-node-xli.herokuapp.com/api/profile', {
+    return fetch('http://webdev-server-node-xli.herokuapp.com/api/profile', {
       body: JSON.stringify(user),
       credentials: 'include',
       method: 'put',

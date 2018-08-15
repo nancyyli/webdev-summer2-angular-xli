@@ -4,3 +4,5 @@ export class LessonServiceClient {
         .then(response => response.json());
     }
   }
+
+  //https://webdev-summer2-xli.herokuapp.com/api/course/'

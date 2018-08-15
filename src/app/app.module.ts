@@ -23,6 +23,11 @@ import { LessonsComponent } from './lessons/lessons.component';
 import { LessonServiceClient } from './services/lesson.service.client';
 import { WidgetsComponent } from './widgets/widgets.component';
 import { WidgetServiceClient } from './services/widget.service.client';
+import { QuizListComponent } from './quiz-list/quiz-list.component';
+import { QuizServiceClient } from './services/quiz.service.client';
+import { QuizComponent } from './quiz/quiz.component';
+import { QuizSubmissionComponent } from './quiz-submission/quiz-submission.component';
+import { QuizAnswersComponent } from './quiz-answers/quiz-answers.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +43,11 @@ import { WidgetServiceClient } from './services/widget.service.client';
     CourseViewerComponent,
     ModulesComponent,
     LessonsComponent,
-    WidgetsComponent
+    WidgetsComponent,
+    QuizListComponent,
+    QuizComponent,
+    QuizSubmissionComponent,
+    QuizAnswersComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +60,8 @@ import { WidgetServiceClient } from './services/widget.service.client';
     WidgetServiceClient,
     LessonServiceClient,
     UserServiceClient,
-    SectionServiceClient
+    SectionServiceClient,
+    QuizServiceClient
   ],
   bootstrap: [AppComponent]
 })
