@@ -1,0 +1,23 @@
+.container-fluid {
+    margin:20px;
+}
+
+h2 {
+    margin-bottom: 30px;
+}
+
+.list-group-item {
+    width: 90%;
+}
+
+.list-group {
+    margin-bottom: 20px;
+}
+
+.home-link {
+    padding-right: 20px;
+}
+
+.btn-take {
+    margin-right: 20px;
+}

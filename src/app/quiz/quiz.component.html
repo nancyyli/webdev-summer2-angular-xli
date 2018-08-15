@@ -3,9 +3,9 @@
 
   <ul class="list-group">
     <li *ngFor="let question of quiz.questions; let i=index" class="list-group-item">
-        <div>{{question.name}}</div>
-        <div>{{question.description}}</div>
-        <div class="float-right">Points: {{question.points}}</div>
+        <div class="question">{{question.name}}</div>
+        <div class="question">{{question.description}}</div>
+        <div class="points float-right">Points: {{question.points}}</div>
         <div [ngSwitch]="question.questionType">
             <div *ngSwitchCase="'Essay'">
               <div class="form-group">
@@ -34,11 +34,11 @@
     </li>
   </ul>
 
-  <button class="btn btn-success" (click)="submit()">Submit</button>
-  <button routerLink="/quizzes" class="btn btn-danger">Cancel</button>
+  <button class="submit-btn btn btn-success" (click)="submit()">Submit</button>
+  <button routerLink="/quizzes" class="cancel-btn btn btn-danger">Cancel</button>
 
 
-  <a routerLink="/home">Home</a>
-  <a routerLink="/courses">Courses</a>
+  <a class="home-link" routerLink="/home">Home</a>
+  <a class="courses-link" routerLink="/courses">Courses</a>
   <a routerLink="/quizzes">Quizzes</a>
 </div>

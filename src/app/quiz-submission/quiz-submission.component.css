@@ -1,0 +1,52 @@
+.container-fluid {
+    margin:20px;
+}
+
+h2 {
+    margin-bottom: 30px;
+}
+
+.list-group-item {
+    width: 90%;
+}
+
+.list-group {
+    margin-bottom: 20px;
+}
+
+.home-link {
+    padding-right: 20px;
+}
+
+
+.points {
+    color: red;
+}
+
+.question {
+    padding-bottom: 20px;
+}
+
+.submit-btn {
+    margin-right: 20px;
+}
+
+.cancel-btn {
+    margin-right: 20px;
+}
+
+.courses-link {
+    padding-right: 20px;
+}
+
+label {
+    padding-right: 10px;
+}
+
+input {
+    margin-right: 10px;
+}
+
+.select-username {
+    margin-bottom: 20px;
+}

@@ -3,7 +3,7 @@
 
     <div>
       <h3>Quiz Preview</h3>
-      <div>{{quiz.name}}</div>
+      <div class="quiz-name">{{quiz.name}}</div>
       <ul class="list-group">
           <li *ngFor="let question of quiz.questions" class="list-group-item">
               <div>{{question.name}}</div>
@@ -30,12 +30,12 @@
     <!-- Search form -->
     <ul class="list-group">
       <li *ngFor="let answer of answers; let i=index" class="list-group-item">
-        <div> Answer for {{i + 1}}</div>
+        <div class="answer-number"> Answer for {{i + 1}}</div>
         <div>{{answer.answer}}</div>
       </li>
     </ul>
 
-    <a routerLink="/home">Home</a>
-    <a routerLink="/courses">Courses</a>
+    <a class="home-link" routerLink="/home">Home</a>
+    <a class="courses-link" routerLink="/courses">Courses</a>
     <a routerLink="/quizzes">Quizzes</a>
   </div>

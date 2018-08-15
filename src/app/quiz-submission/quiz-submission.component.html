@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <h2>Submissions</h2>
     <!-- Search form -->
-    <select (change)="filterUsername($event)" class="form-control col-sm-3">
+    <select (change)="filterUsername($event)" class="form-control col-sm-3 select-username">
         <option value="-1">Default select</option>
         <option value="{{i}}" *ngFor="let submission of submissions; let i=index">{{submission.student}}</option>
       </select>
@@ -15,7 +15,7 @@
       </li>
     </ul>
 
-    <a routerLink="/home">Home</a>
-    <a routerLink="/courses">Courses</a>
+    <a class="home-link" routerLink="/home">Home</a>
+    <a class="courses-link" routerLink="/courses">Courses</a>
     <a routerLink="/quizzes">Quizzes</a>
   </div>
